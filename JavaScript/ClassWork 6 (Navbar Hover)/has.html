@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .balls {
+            display: flex;
+            gap: 10px;
+            border: 3px solid white;
+            padding: 10px;
+        }
+
+        .ball {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            transition: all 0.3s linear;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        /* agar balls ke pas blue class hoga to esab proprty apply ho jyga */
+        .balls:has(.blue) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="balls">
+        <div class="ball green"></div>
+        <div class="ball green"></div>
+        <div class="ball red"></div>
+    </div>
+
+    <div class="balls">
+        <div class="ball blue"></div>
+        <div class="ball red"></div>
+        <div class="ball red"></div>
+    </div>
+
+    <div class="balls">
+        <div class="ball green"></div>
+        <div class="ball blue"></div>
+        <div class="ball green"></div>
+    </div>
+</body>
+
+</html>

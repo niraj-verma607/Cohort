@@ -1,0 +1,27 @@
+const mouseFollower = document.querySelector(".mouse-follower");
+
+// addEventListener("mousemove", (e) => {
+//   const { clientX, clientY } = e;
+//   // console.log(clientX, clientY);
+
+//   // mouseFollower.style.top = clientY + "px"
+//   // mouseFollower.style.left = clientX + "px"
+
+//   mouseFollower.style.transform = `translate(${clientX}px, ${clientY}px)`;
+// });
+
+let x = 0,
+  y = 0;
+
+addEventListener("mousemove", (e) => {
+  const { clientX, clientY } = e;
+  x = clientX;
+  y = clientY;
+});
+
+function far() {
+  mouseFollower.style.transform = `translate(${x}px, ${y}px)`;
+  requestAnimationFrame(far);
+}
+
+far();

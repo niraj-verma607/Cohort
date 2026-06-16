@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      main {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr 300px 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 15px;
+        padding: 10px;
+        grid-template-areas:
+          "left-top top-center top-right"
+          "left-top center bottom-right"
+          "left-bottom left-bottom bottom-right";
+      }
+      #left-top {
+        background-color: aquamarine;
+        grid-area: left-top;
+      }
+      #left-bottom {
+        background-color: blanchedalmond;
+        grid-area: left-bottom;
+      }
+      #bottom-right {
+        background-color: lightblue;
+        grid-area: bottom-right;
+      }
+      #center {
+        background-color: lightgreen;
+        grid-area: center;
+      }
+      #top-center {
+        background-color: lightseagreen;
+        grid-area: top-center;
+      }
+      #top-right {
+        background-color: cadetblue;
+        grid-area: top-right;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="left-top">Left Top</div>
+      <div id="left-bottom">Left Bottom</div>
+      <div id="bottom-right">Bottom Right</div>
+      <div id="center">Center</div>
+      <div id="top-center">Top Center</div>
+      <div id="top-right">Top right</div>
+    </main>
+  </body>
+</html>

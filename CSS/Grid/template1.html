@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      main {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 70px 1fr 1fr;
+        grid-gap: 20px;
+        padding: 20px;
+        /* For centring items */
+        /* align-items: center;
+        justify-items: center; */
+        grid-template-areas:
+          "header header header"
+          "section section section"
+          "div1 div2 div3";
+      }
+      header {
+        background-color: crimson;
+        grid-area: header;
+      }
+      section {
+        background-color: lightseagreen;
+        grid-area: section;
+      }
+      #div1 {
+        background-color: magenta;
+        grid-area: div1;
+      }
+      #div2 {
+        background-color: darkred;
+        grid-area: div2;
+      }
+      #div3 {
+        background-color: darkslategray;
+        grid-area: div3;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>Header</header>
+      <section>Section</section>
+      <div id="div1">div1</div>
+      <div id="div2">div2</div>
+      <div id="div3">div3</div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* 
+font-family: "Domine",
+serif; */
+
+main {
+    padding: 30px;
+    border: 2px dotted white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 50px;
+    padding: 10px;
+    color: #11ff00;
+    font-family: "Domine", serif;
+    background-color: rgba(11, 123, 17, 0.612);
+    transition: all 0.3s linear;
+
+}
+
+main h3 {
+    margin: 20px 0;
+    font-size: 35px;
+
+    font-family: "Domine", serif;
+    background: linear-gradient(90deg, #3f3bff, #f50303);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+main p {
+    margin: 15px 0;
+    font-family: monospace;
+    font-size: 20px;
+    color: #00ff00;
+}

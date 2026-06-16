@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  cursor: none;
+}
+
+main {
+  height: 200%;
+  width: 100%;
+}
+
+#cursor {
+  height: 50px;
+  position: fixed;
+  /* absolute dene par scroll karne par follow nhi karega  */
+  transform: translate(-50%, -50%);
+}

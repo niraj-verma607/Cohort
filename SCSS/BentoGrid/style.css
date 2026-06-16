@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #28304d;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: 600px;
+  width: 800px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #03061c;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "top-left middle-top middle-top top-right" "top-left middle-top middle-top right-mid" "left-mid btm-mid1 btm-mid2 btm-right" "left-btm btm-mid1 btm-mid2 btm-right";
+  grid-gap: 20px;
+}
+main .box {
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+main .box:hover {
+  transform: scale(1.03);
+}
+main .box1 {
+  grid-area: top-left;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/left-top.png);
+}
+main .box2 {
+  grid-area: middle-top;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/top-mid.png);
+}
+main .box3 {
+  grid-area: top-right;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/top-right.png);
+}
+main .box4 {
+  grid-area: left-mid;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/left-btm-mid.png);
+}
+main .box5 {
+  grid-area: right-mid;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/right-top-mid.png);
+}
+main .box6 {
+  grid-area: left-btm;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/left-btm.png);
+}
+main .box7 {
+  grid-area: btm-mid1;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/btm-left-mid.png);
+}
+main .box8 {
+  grid-area: btm-mid2;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/btm-right-mid.png);
+}
+main .box9 {
+  grid-area: btm-right;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./Images/right-btm.png);
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: url(./Images/circle.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */

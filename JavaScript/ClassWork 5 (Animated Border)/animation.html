@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      /* Creating custom property  */
+      @property --bgColor {
+        syntax: "<color>";
+        initial-value: black;
+        inherits: false;
+      }
+
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes changeBg {
+        from {
+          background-color: white;
+          border-radius: 0px;
+          transform: translateX(0px) scale(1);
+        }
+        to {
+          background-color: red;
+          border-radius: 50px;
+          transform: translateX(100px) scale(1.5);
+        }
+      }
+
+      @keyframes animateBgColor {
+        from {
+          --bgColor: white;
+        }
+        to {
+          --bgColor: red;
+        }
+      }
+
+      .box {
+        height: 200px;
+        width: 400px;
+        border: 1px solid white;
+        /* Using property */
+        background-color: var(--bgColor);
+        /* animation: changeBg 10s forwards; */
+        animation: animateBgColor 10s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

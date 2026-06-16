@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        color: rgb(8, 235, 8);
+        font-size: 3rem;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Welcome to virtual world of Niraj</p>
+
+    <script>
+      const para = document.querySelector("p");
+
+      const characters = "ABCDEFGHUJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      const text = para.innerText;
+
+      let iteration = 0;
+
+      function randomText() {
+        const str = text
+          .split("")
+          .map((char, index) => {
+            if (index < iteration) {
+              return char;
+            }
+            return characters.split("")[Math.floor(Math.random() * 52)];
+          })
+          .join("");
+
+        para.innerText = str;
+        // console.log(str.length);
+        iteration += 0.25; //speed kitne der me animation complete hoga
+        //Interval break ho jyga jaise text animation complete hoga
+        if (text == para.innerText) {
+          clearInterval(textAnimation);
+        }
+      }
+
+      let textAnimation = setInterval(randomText, 30);
+    </script>
+  </body>
+</html>

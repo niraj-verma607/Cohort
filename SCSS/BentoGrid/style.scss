@@ -1,0 +1,170 @@
+@mixin center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin box() {
+  //   background-color: #1d1d3b;
+  border-radius: 20px;
+}
+
+@mixin img() {
+  background-size: cover;
+  background-position: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #28304d;
+  position: relative;
+  @include center();
+}
+main {
+  height: 600px;
+  width: 800px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #03061c;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "top-left middle-top middle-top top-right"
+    "top-left middle-top middle-top right-mid"
+    "left-mid btm-mid1 btm-mid2 btm-right"
+    "left-btm btm-mid1 btm-mid2 btm-right";
+  grid-gap: 20px;
+
+  .box {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .box:hover {
+    transform: scale(1.03);
+  }
+
+  .box1 {
+    grid-area: top-left;
+    @include box();
+    @include img();
+    background-image: url(./Images/left-top.png);
+  }
+
+  .box2 {
+    grid-area: middle-top;
+    // height: 200px;
+    // width: 250px;
+    @include box();
+    // clip-path: path(
+    //   "M556 30C556 13.4315 542.569 0 526 0H30C13.4315 0 0 13.4315 0 30V366C0 382.569 13.4315 396 30 396H90.2477C105.266 396 117.68 384.766 122.06 370.4C142.425 303.599 204.537 255 278 255C351.463 255 413.575 303.599 433.94 370.4C438.32 384.766 450.734 396 465.752 396H526C542.569 396 556 382.569 556 366V30Z"
+    // );
+    @include img();
+    background-image: url(./Images/top-mid.png);
+  }
+
+  .box3 {
+    grid-area: top-right;
+    @include box();
+    @include img();
+    background-image: url(./Images/top-right.png);
+  }
+
+  .box4 {
+    grid-area: left-mid;
+    @include box();
+    @include img();
+    background-image: url(./Images/left-btm-mid.png);
+  }
+  .box5 {
+    grid-area: right-mid;
+    @include box();
+    @include img();
+    background-image: url(./Images/right-top-mid.png);
+  }
+
+  .box6 {
+    grid-area: left-btm;
+    @include box();
+    @include img();
+    background-image: url(./Images/left-btm.png);
+  }
+
+  .box7 {
+    grid-area: btm-mid1;
+    @include box();
+    // clip-path: path(
+    //   "M119.697 28.679C116.278 12.8988 103.321 0 87.1743 0H30C13.4315 0 0 13.4315 0 30V382C0 398.569 13.4315 412 30 412H234C250.569 412 264 398.569 264 382V183.706C264 168.194 252.049 155.534 237.056 151.553C178.342 135.962 132.642 88.4236 119.697 28.679Z"
+    // );
+    @include img();
+    background-image: url(./Images/btm-left-mid.png);
+  }
+
+  .box8 {
+    grid-area: btm-mid2;
+    @include box();
+    // clip-path: path(
+    //   "M27.1366 150.765C12.0553 154.686 0 167.381 0 182.964V382C0 398.569 13.4315 412 30 412H234C250.569 412 264 398.569 264 382V30C264 13.4315 250.569 0 234 0L177.612 0C161.536 0 148.611 12.7921 145.126 28.486C131.885 88.1245 85.9732 135.466 27.1366 150.765Z"
+    // );
+    @include img();
+    background-image: url(./Images/btm-right-mid.png);
+  }
+
+  .box9 {
+    grid-area: btm-right;
+    @include box();
+    @include img();
+    background-image: url(./Images/right-btm.png);
+  }
+}
+
+// .circle {
+//   height: 200px;
+//   width: 200px;
+//   border-radius: 50%;
+//   background-image: url(./Images/circle.png);
+//   @include img();
+//   position: absolute;
+//   top: 16.8rem;
+//   left: 41.8rem;
+//   transform: translate(-50%, -50%);
+//   animation: rotate 10s infinite linear;
+// }
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: url(./Images/circle.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 10s infinite linear;
+}
+
+// @keyframes rotate {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(143, 245, 245);
+}
+
+.box {
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #3482db;
+  border: 2px solid black;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}

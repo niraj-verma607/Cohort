@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(146, 167, 230);
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  background-image: url(./marvel.webp);
+  background-size:cover;
+  /* background-position: center; */
+}
+
+.card {
+  height: 300px;
+  width: 330px;
+  background-color: white;
+  position: relative;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottom {
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: -50%;
+
+  transition: all ease 0.4s;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: 20px;
+  background: linear-gradient(transparent, black);
+}
+
+.bottom h4 {
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.bottom h3 {
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 50%;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.msg {
+  color: rgba(255, 255, 255, 0.799);
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 2px solid white;
+}
+
+.card:hover .bottom {
+  bottom: 0;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      :root {
+        --x: 200px;
+        --y: 200px;
+      }
+
+      body {
+        background-image: url(https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1215&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .box {
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(
+          150px at var(--x) var(--y),
+          rgba(255, 255, 255, 0),
+          rgba(0, 0, 0, 0.95)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script>
+      addEventListener("mousemove", (e) => {
+        //set property ka use root variable ko change aa update karne ke liye hota hai(iska use dusre property ko chnage karne me bhi hota hai)
+        document.body.style.setProperty("--x", e.clientX + "px");
+        // setProperty(kisko update karna hai, kisse karne hai)
+        document.body.style.setProperty("--y", e.clientY + "px");
+      });
+    </script>
+  </body>
+</html>

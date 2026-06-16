@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  padding: 10px 15px;
+  background-color: royalblue;
+  color: white;
+  height: 10vh;
+}
+
+.main {
+  padding: 20px;
+  background-color: cornflowerblue;
+  height: 70vh;
+}
+
+.footer {
+  height: 20vh;
+  padding: 20px;
+  background-color: brown;
+  color: white;
+}

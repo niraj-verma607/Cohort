@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Roboto, sans-serif; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+#text {
+  font-size: 100px;
+  color: transparent;
+  text-align: center;
+  /* Linear Gradient in Text */
+  /* background: linear-gradient(red, blue); */
+  /* Backround Gif (videos not allowed) in text */
+  background-image: url(https://cdn.dribbble.com/userupload/21831795/file/original-837b02d818c9ea92f8d76ae5ed191d11.gif);
+  background-size: contain;
+  /* background-position: center; */
+  background-clip: text;
+}
+
+#txtborder {
+  font-size: 100px;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+}

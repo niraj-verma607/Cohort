@@ -1,0 +1,42 @@
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { ChatMistralAI } from "@langchain/mistralai";
+import { HumanMessage, SystemMessage, AIMessage } from "langchain";
+
+const geminiModel = new ChatGoogleGenerativeAI({
+  model: "gemini-2.5-flash-lite",
+  apiKey: process.env.GEMINI_API_KEY,
+});
+
+const mistralModel = new ChatMistralAI({
+  model: "mistral-small-latest",
+  apiKey: process.env.MISTRAL_API_KEY,
+});
+
+export async function genrateResponse(messages) {
+  const response = await geminiModel.invoke(
+    messages.map((msg) => {
+      if (msg.role === "user") {
+        return new HumanMessage(msg.content);
+      } else if (msg.role === "ai") {
+        return new AIMessage(msg.content);
+      }
+    }),
+  );
+  return response.text;
+}
+
+export async function genrateChatTitle(message) {
+  const response = await mistralModel.invoke([
+    new SystemMessage(
+      `You are a helpful assistant that generates concise and descriptive titles for chat conversations.
+      
+      User will provide a message from a chat conversation, and your task is to generate a title that captures the essence of the conversation in a 3-4 words. The title should be clear, relevant, and engaging giving user a quick understanding of the conversation.`,
+    ),
+
+    new HumanMessage(
+      ` Generate a title for a chat based on thefollowing first message: ${message}`,
+    ),
+  ]);
+
+  return response.text;
+}

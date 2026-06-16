@@ -1,0 +1,4 @@
+# This file tells Docker which files and directories to ignore when building the image. 
+
+node_modules
+.env

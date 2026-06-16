@@ -1,0 +1,15 @@
+import { additem } from "../service/cart.api";
+import { useDispatch } from "react-redux";
+import { addItem as addItemToCart } from "../state/cart.slice";
+
+export const useCart = () => {
+  const dispatch = useDispatch();
+
+  async function handleAddItem({ productId, variantId }) {
+    const data = await additem({ productId, variantId });
+    return data;
+    console.log(data)
+  }
+
+  return { handleAddItem };
+};
