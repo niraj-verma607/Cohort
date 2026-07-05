@@ -7,6 +7,13 @@ router.post("/invoke", async (req, res) => {
   try {
     const { message, projectId } = req.body;
 
+    // For Server Sent Events (SSE)
+    res.writeHead(200, {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+    });
+
     const response = await agent.stream(
       {
         messages: [
@@ -28,7 +35,7 @@ router.post("/invoke", async (req, res) => {
       console.log(chunk);
       res.write(`data: ${chunk}\n\n`);
     }
-
+ 
     res.json({ response });
   } catch (error) {
     console.error("Error invoking agent:", error);
