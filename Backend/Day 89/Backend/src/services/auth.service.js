@@ -59,7 +59,7 @@ let loginService = async (data) => {
     let hassPass = bcrypt.compareSync(password, isExisted.password);
 
     if (!hassPass) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      throw new Error("Invalid credentials");
     }
 
     let accessToken = generateAccessToken(isExisted._id);
