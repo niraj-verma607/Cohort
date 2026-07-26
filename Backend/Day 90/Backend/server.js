@@ -4,7 +4,7 @@ const connectDB = require("./src/config/db");
 const dns = require("dns");
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
-let port = process.env.PORT || 5000;
+let port = 3000;
 
 connectDB();
 
