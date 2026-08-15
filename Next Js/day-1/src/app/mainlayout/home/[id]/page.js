@@ -2,7 +2,7 @@ import React from "react";
 
 const page = async ({ params }) => {
   let { id } = await params;
- 
+
   return (
     <div>
       <h1>Common page for dynamic page - {id}</h1>
