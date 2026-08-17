@@ -7,11 +7,13 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { api } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/authContext";
 
 const Page = () => {
+  let { hydrateUser } = useAuth();
   let router = useRouter();
   const [formData, setFormData] = useState({});
-//   console.log(formData);
+  //   console.log(formData);
 
   let handleChange = (e) => {
     let { name, value } = e.target;
@@ -23,7 +25,7 @@ const Page = () => {
     try {
       let res = await api.post("/api/auth/login", formData);
       console.log(res);
-      router.push("/home");
+      hydrateUser();
     } catch (err) {
       console.log("Error in login : ", err);
     }
