@@ -1,0 +1,18 @@
+{
+  "name": "day-3-(typescript)",
+  "version": "1.0.0",
+  "description": "TypeScript is a **superset of JavaScript** that adds static type checking and other features. Every valid JavaScript code is also valid TypeScript. TypeScript is compiled into plain JavaScript that can run in any browser or Node.js environment.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
