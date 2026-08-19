@@ -5,7 +5,7 @@ import { ApiResponse } from "@/types/api.types";
 import { RegisterBody } from "@/types/user.types";
 import { NextRequest, NextResponse } from "next/server";
 
-async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     await connectDB();
     let body: RegisterBody = await req.json();
@@ -44,7 +44,7 @@ async function POST(req: NextRequest) {
       mobile,
     });
 
-    let token = genrateToken({ userId: newUser._id });
+    let token = genrateToken({ userId: newUser._id.toString() });
 
     let response = NextResponse.json<ApiResponse>(
       {
