@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
     let response = NextResponse.json<ApiResponse>(
       {
         success: true,
-        message: "User registered successfully",
+        message: "User Login successfully",
         data: {
           user: {
             _id: isExisted._id,

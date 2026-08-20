@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
     let response = NextResponse.json<ApiResponse>(
       {
         success: true,
-        message: "User registred successfully",
+        message: "User regisetred successfully",
         data: {
           user: {
             _id: newUser._id,
