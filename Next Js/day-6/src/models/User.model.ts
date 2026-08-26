@@ -45,6 +45,6 @@ userSchema.methods.comparePass = function (canidatePassword: string): boolean {
   return bcrypt.compareSync(canidatePassword, this.password);
 };
 
-const userModel = mongoose.model("User", userSchema);
+const userModel = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default userModel;
